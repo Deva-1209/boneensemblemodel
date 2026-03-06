@@ -206,7 +206,7 @@ if uploaded_file is not None:
     
     with col1:
         st.subheader("📸 Original Image")
-        st.image(original, use_column_width=True, clamp=True)
+        st.image(original, use_container_width=True, clamp=True)
     
     with col2:
         st.subheader("🎯 Prediction")
@@ -360,4 +360,5 @@ explainability.
 - **Task**: 3-way body-part classification
 - **Explainability**: Grad-CAM attention maps
 """)
+
 
