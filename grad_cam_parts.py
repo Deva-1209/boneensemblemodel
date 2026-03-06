@@ -142,7 +142,8 @@ def visualise_all_backbones(model, image_path, save_dir=None):
     pred_class = int(np.argmax(predictions[0]))
     pred_conf  = float(predictions[0][pred_class]) * 100
 
-    fig, axes = plt.subplots(1, 4, figsize=(20, 5))
+    n_backbones = len(BACKBONE_LAYERS)
+    fig, axes = plt.subplots(1, n_backbones + 1, figsize=(5 * (n_backbones + 1), 5))
 
     # Original image
     axes[0].imshow(original)
@@ -233,3 +234,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
