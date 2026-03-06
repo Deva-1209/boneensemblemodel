@@ -43,8 +43,7 @@ def preprocess_input(x):
 #  Cosine Annealing LR Schedule
 # ============================================================
 def cosine_lr_schedule(epoch, lr, total_epochs=PHASE2_EPOCHS, min_lr=1e-7):
-    return min_lr + 0.5 * (PHASE2_LR - min_lr) * (1 + math.cos(math.pi * epoch / total_epochs))
-
+    return min_lr + 0.5 * (lr - min_lr) * (1 + math.cos(math.pi * epoch / total_epochs))
 
 # ============================================================
 #  Cutout Augmentation
@@ -370,3 +369,4 @@ if __name__ == '__main__':
     save_confusion_matrix(y_true, y_pred, labels_list, plot_dir)
     print(f"  ✔ Plots saved → {plot_dir}")
     print("\n✅ Ensemble body-part model trained successfully!")
+
