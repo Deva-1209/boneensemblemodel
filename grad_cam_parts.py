@@ -121,7 +121,7 @@ def overlay_heatmap(original_img, heatmap, alpha=0.4, colormap='jet'):
     ).numpy().squeeze()
 
     # Colourize
-    cmap = cm.get_cmap(colormap)
+    cmap = plt.colormaps[colormap]
     heatmap_colored = cmap(heatmap_resized)[:, :, :3]       # drop alpha
     heatmap_colored = (heatmap_colored * 255).astype(np.uint8)
 
@@ -234,4 +234,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
