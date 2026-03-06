@@ -8,7 +8,7 @@ An interactive Streamlit web application for predicting body parts in X-ray imag
 - **Body-Part Classification**: Predicts Elbow, Hand, or Shoulder
 - **Confidence Scores**: Shows prediction confidence for all classes
 - **Grad-CAM Visualization**: Explainability maps from multiple backbones:
-  - EfficientNetV2S
+  - MobileNetV2
   - DenseNet121
   - InceptionV3
 - **Export Results**: Download prediction reports
@@ -70,7 +70,7 @@ boneFracture Dataset/
 ### Architecture
 
 The model is an **3-backbone ensemble**:
-1. **EfficientNetV2S** - Efficient feature extraction
+1. **MobileNetV2** - Efficient feature extraction
 2. **DenseNet121** - Dense connections for gradient flow
 3. **InceptionV3** - Multi-scale feature learning
 
