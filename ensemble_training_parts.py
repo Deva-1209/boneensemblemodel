@@ -330,7 +330,7 @@ if __name__ == '__main__':
     # ────────────────────────────────────────────────────────
     print(f"\n  ▸ PHASE 2 — Fine-tuning ({PHASE2_EPOCHS} epochs, lr={PHASE2_LR})\n")
 
-    unfreeze_top_layers(model, 'mobilenetv2_1.00_224', UNFREEZE_FRACTION)
+    unfreeze_top_layers(model, 'mobilenetv2',     UNFREEZE_FRACTION)
     unfreeze_top_layers(model, 'densenet121',     UNFREEZE_FRACTION)
     unfreeze_top_layers(model, 'inceptionv3',     UNFREEZE_FRACTION)
 
@@ -369,4 +369,5 @@ if __name__ == '__main__':
     save_confusion_matrix(y_true, y_pred, labels_list, plot_dir)
     print(f"  ✔ Plots saved → {plot_dir}")
     print("\n✅ Ensemble body-part model trained successfully!")
+
 
