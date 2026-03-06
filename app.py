@@ -135,7 +135,7 @@ def overlay_heatmap(original_img, heatmap, alpha=0.4, colormap='jet'):
     ).numpy().squeeze()
 
     # Colorize
-    cmap = cm.get_cmap(colormap)
+    cmap = plt.colormaps[colormap]
     heatmap_colored = cmap(heatmap_resized)[:, :, :3]
     heatmap_colored = (heatmap_colored * 255).astype(np.uint8)
 
@@ -360,3 +360,4 @@ explainability.
 - **Task**: 3-way body-part classification
 - **Explainability**: Grad-CAM attention maps
 """)
+
